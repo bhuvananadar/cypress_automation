@@ -1,12 +1,12 @@
-
-
+import constants from '../../support/constants'
+import locators from '../../support/locators'
 describe("testing", () => {
 
     it("test it 01", () => {
         cy.log("Testong log")
         cy.visit("https://www.saucedemo.com/v1/index.html")
-        cy.get("#user-name").type("standard_user")
-        cy.get("#password").type("secret_sauce")
+        cy.get(locators.username_field).type(constants.username)
+        cy.get(locators.password_field).type(constants.password)
         cy.get("#login-button").click() 
         cy.get(".product_sort_container").select("Name (Z to A)")
         cy.get("#item_3_title_link").click()
